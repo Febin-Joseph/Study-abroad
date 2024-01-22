@@ -23,7 +23,9 @@ app.use('/api', coursesRoutes)
 
 //MONGO DB CONNECTION
 mongoose.connect(process.env.MONGO_URL, { 
-    useNewUrlParser: true, useUnifiedTopology: true 
+    useNewUrlParser: true,
+     useUnifiedTopology: true,
+     
 })
 .then(async () => {
     console.log('MONGO DB connected')

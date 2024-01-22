@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Card from "./src/components/card/Card"
+import Card from "./Card"
 
 test('renders Card component with data', () => {
   const data = {
