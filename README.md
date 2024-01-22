@@ -28,9 +28,13 @@ Welcome to the Study Abroad platform! Embark on a journey of discovery and educa
 - use cd to navigate to Backend side and use `cd server` from the root directory
 - Then use docker for building and starting port for that follow the steps
    ## Build using :
-  ```bash docker build -t studyabroad .```
+  ```bash
+  docker build -t studyabroad .
+  ```
    ## Run using :
-  ```bash docker run -p 8080:8080 studyabroad```
+  ```bash
+   docker run -p 8080:8080 studyabroad
+  ```
 
 
 # 🚦 Functional Testing:
