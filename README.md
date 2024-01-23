@@ -46,6 +46,7 @@ Welcome to the Study Abroad platform! Embark on a journey of discovery and educa
 
 To run the functional tests for the frontend, execute the following command:
 ```bash
+cd client
 npm test
 ```
 
