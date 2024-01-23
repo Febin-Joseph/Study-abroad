@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const Home = () => {
   const [data, setData] = useState([]);
-  const [filteredData, setFilteredData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);//taking filters
 
   useEffect(() => {
     axios.get('https://studyabroad-back.onrender.com/api/courses', { withCredentials: true })
@@ -17,7 +17,7 @@ const Home = () => {
       });
   }, []);
 
-  const handleLocationChange = (location) => {
+  const handleLocationChange = (location) => {//handler for changing the location
     if (location) {
       const filteredCourses = data.filter(course => course.location === location);
       setFilteredData(filteredCourses);
@@ -26,7 +26,7 @@ const Home = () => {
     }
   };
 
-  const handleDurationChange = (duration) => {
+  const handleDurationChange = (duration) => {//handler for changing the duration
     if (duration) {
       const filteredCourses = data.filter((course) => course.duration === duration);
       setFilteredData(filteredCourses);
