@@ -11,11 +11,26 @@ const Nav = () => {
         height={29}
       /></a>
       <div className='hidden lg:flex'>
-      <ul className='hidden h-full gap-12 lg:flex regular-16 text-gray-50 flexCenter cursor-pointer'>
-        <p className='pb-1.5 transition-all hover:font-semibold'>Home</p>
-        <p className="pb-1.5 transition-all hover:font-semibold">Contact</p>
-      </ul>
+        <ul className='hidden h-full gap-12 lg:flex regular-16 text-gray-50 flexCenter cursor-pointer'>
+          <p className='pb-1.5 transition-all hover:font-semibold'><a href="/">Home</a></p>
+          <p className="pb-1.5 transition-all hover:font-semibold"
+            onClick={() => document.getElementById('contact').showModal()}>
+            Contact
+          </p>
+        </ul>
       </div>
+
+      {/* Modal popup for contact */}
+      <dialog id="contact" className="modal">
+        <div className="modal-box">
+          <h1 className="font-bold text-lg">Contact Me!</h1>
+          <p className="py-4 font-semibold text-[17px] text-black text-opacity-7">Mobile : +91 9995367561</p>
+          <p className="py-3 font-semibold text-[17px] text-black text-opacity-7">Email : febinachu123@gmail.com</p>
+        </div>
+        <form method="dialog" className="modal-backdrop">
+          <button>close</button>
+        </form>
+      </dialog>
 
       <img
         src={menu}
