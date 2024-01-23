@@ -22,15 +22,13 @@ app.use('/api', coursesRoutes)
 
 
 //MONGO DB CONNECTION
-mongoose.connect(process.env.MONGO_URL, { 
-    useNewUrlParser: true,
-     useUnifiedTopology: true,
-     
-})
+mongoose.connect(process.env.MONGO_URL)
 .then(async () => {
     console.log('MONGO DB connected')
 }).catch((err) => console.log(`cant connect because of this error  ${err}`));
 
 //PORT CONNECTION
-const port = process.env.PORT
-const server = app.listen(port, () => console.log(`server started on ${port}`))
+// const port = process.env.PORT
+// const server = app.listen(port, () => console.log(`server started on ${port}`))
+
+export default app;

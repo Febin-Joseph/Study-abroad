@@ -3,11 +3,11 @@ import Course from "../models/courses.js";
 export const courses = async (req, res) => {
     try {
         const courses = await Course.find();
-        res.json(courses);
+        res.status(200).json({ courses })
 
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: error.message });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ err: err.message });
     }
 }
 
@@ -17,8 +17,8 @@ export const uploadCourses = async (req, res) => {
         const saveCourse = await newCourse.save();
         res.status(201).json(saveCourse);
 
-    } catch (error) {
-        console.error(error);
-    res.status(500).json({ error: error.message });
+    } catch (err) {
+        console.error(err);
+    res.status(500).json({ err: err.message });
     }
 }
