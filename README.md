@@ -15,7 +15,7 @@ Welcome to the Study Abroad platform! Embark on a journey of discovery and educa
 # 🏗️ Project Structure:
 
 - **client:** Explore the frontend codebase, featuring React components and configurations.
-- **server:** Navigate through the backend codebase, powered by Node.js and Express, interacting with a mock MongoDB database.
+- **server:** Navigate through the backend codebase, powered by Node.js and Express, interacting with MongoDB database.
 
 # ⚙️ Start Project 
 
