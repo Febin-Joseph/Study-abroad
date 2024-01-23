@@ -49,7 +49,7 @@ const Home = () => {
         />
         {loading ? (
           <div className='flex items-center justify-center mt-60'>
-          <progress className="progress w-56 bg-white-10"></progress>
+            <progress className="progress w-56 bg-white-10"></progress>
           </div>
         ) : (
           <div className='p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5 4xl:grid-cols-6 gap-5'>
