@@ -5,6 +5,7 @@ import axios from 'axios';
 const Home = () => {
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);//taking filters
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios.get('https://studyabroad-back.onrender.com/api/courses', { withCredentials: true })
@@ -14,6 +15,9 @@ const Home = () => {
       })
       .catch(error => {
         console.error('Error fetching data:', error);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   }, []);
 
@@ -43,11 +47,17 @@ const Home = () => {
           onLocationChange={handleLocationChange}
           onDurationChange={handleDurationChange}
         />
-        <div className='p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5 4xl:grid-cols-6 gap-5'>
-          {filteredData.map(cardData => (
-            <Card key={cardData.id} data={cardData} />
-          ))}
-        </div>
+        {loading ? (
+          <div className='flex items-center justify-center mt-60'>
+          <progress className="progress w-56 bg-white-10"></progress>
+          </div>
+        ) : (
+          <div className='p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5 4xl:grid-cols-6 gap-5'>
+            {filteredData.map(cardData => (
+              <Card key={cardData.id} data={cardData} />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
