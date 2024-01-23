@@ -3,7 +3,7 @@ import Course from "../models/courses.js";
 export const courses = async (req, res) => {
     try {
         const courses = await Course.find();
-        res.status(200).json({ courses })
+        res.json(courses)
 
     } catch (err) {
         console.error(err);
