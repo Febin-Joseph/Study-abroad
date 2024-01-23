@@ -27,7 +27,7 @@ const Card = ({ data }) => {
             </div>
 
             {description.map((desc, index) => (
-              <div className='mt-2 pl-6 font-semibold text-[18px] text-black text-opacity-7 flex flex-col'>
+              <div key={index} className='mt-2 pl-6 font-semibold text-[18px] text-black text-opacity-7 flex flex-col'>
                 <ul>
                   <li key={index}>
                     <p className="flex items-center whitespace-wrap">
